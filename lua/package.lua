@@ -83,7 +83,7 @@ local CLIENT_PACKAGE_VERSION = post['version']
 if CLIENT_PACKAGE_VERSION then
     -- Hit metrika counter by target version and client ip
     local ip = ngx.var.http_x_real_ip
-    local CLIENTS_ID_KEY = PACKAGE_NAME .. ':' .. CLIENT_PACKAGE_VERSION .. ':' .. ':clients'
+    local CLIENTS_ID_KEY = PACKAGE_NAME .. ':' .. CLIENT_PACKAGE_VERSION .. ':clients'
 
     ok, err = red:HINCRBY(CLIENTS_ID_KEY, ip, 1)
 end
