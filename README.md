@@ -1,6 +1,6 @@
 # Version controller
 
-Check package's updates and track versions in use. 
+Check package's updates and track versions in use.
 
 ## API
 
@@ -8,7 +8,7 @@ There is a simple one route API. CORS support is enabled.
 
 ### Request
 
-Send a POST request to uri `/check`
+Send a POST request to uri `/check-version`
 
 | Field   | Example              | Description                               |
 | ------- | -------------------- | ----------------------------------------- |
@@ -18,7 +18,7 @@ Send a POST request to uri `/check`
 #### Example
 
 ```shell
-curl -X POST http://localhost:8888/check -d "package=@editorjs/editorjs" -d "version=2.10.0"
+curl -X POST http://localhost:8888/check-version -d "package=@editorjs/editorjs" -d "version=2.10.0"
 ```
 
 ### Response 
@@ -53,7 +53,7 @@ Run local server:
 docker-compose up
 ```
 
-To enable live lua code reloading uncomment the following string in the [`lua/package.lua`](lua/package.lua) file and reload the server.
+To enable live lua code reloading uncomment the following string in the [`lua/package.lua`](lua/check-version.lua) file and reload the server.
 
 ```nginx
 #lua_code_cache off;
