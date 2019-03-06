@@ -1,0 +1,13 @@
+version: '3'
+services:
+  openresty:
+    build: .
+    ports:
+      - '8888:80'
+    links:
+      - redis
+    volumes:
+      - ./conf.d:/etc/nginx/conf.d
+      - ./lua:/usr/local/openresty/nginx/lua
+  redis:
+    image: 'redis:latest'
